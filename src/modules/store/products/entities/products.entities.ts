@@ -10,6 +10,7 @@ import {
   ManyToOne,
   OneToMany,
 } from 'typeorm';
+import { categoryEntity } from '../../category/entities/category.entities';
 
 @Entity('products', { schema: 'products_categoria_detalle_factura' })
 export class productsEntity {
@@ -42,8 +43,8 @@ export class productsEntity {
   detailbills: detailbillsEntity[];
   
   //relacion de products (muchos-many) a categories (1-one)
-  @ManyToOne(() => categoriesEntity, (category) => category.products)
-  category: categoriesEntity;
+  @ManyToOne(() => categoryEntity, (category) => category.products)
+  category: categoryEntity;
   
   
   //Columnas detailpublication

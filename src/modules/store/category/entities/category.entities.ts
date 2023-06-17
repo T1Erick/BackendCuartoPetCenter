@@ -1,5 +1,6 @@
 import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, OneToMany, ManyToOne } from "typeorm";
 import { sectionEntity } from "../../section/entities/section.entities";
+import { productsEntity } from "../../products/entities/products.entities";
 
 @Entity('section', { schema: 'category' })
 
@@ -30,6 +31,9 @@ export class categoryEntity {
 
     @ManyToOne(() => sectionEntity, section => section.category)
     section: sectionEntity ; //atributo de tipo arreglo
+
+    @OneToMany(() =>productsEntity,products=> products.category)
+    products: productsEntity[];
 
 
     @Column('varchar', {
