@@ -1,5 +1,5 @@
 import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, OneToMany, ManyToOne } from "typeorm";
-import { categoryEntity } from "./category.entities";
+import { categoryEntity } from "../../category/entities/category.entities";
 
 @Entity('section', { schema: 'category' })
 

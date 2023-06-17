@@ -1,6 +1,7 @@
 import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, ManyToOne } from "typeorm";
-import { productsEntity } from "./products.entities";
-import { billEntity } from "./bill.entities";
+
+import { billEntity } from "../../bills/entities/bill.entities";
+import { productsEntity } from "src/modules/store/products/entities/products.entities";
 
 //import { ProductEntity } from "./product.model";
 

@@ -1,5 +1,6 @@
 import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, OneToMany, ManyToOne } from "typeorm";
-import { detailpublicationEntity } from "./detailpublication.entities";
+import { detailpublicationsEntity } from "../../detailpublication/entities/detailpublication.entities";
+
 
 @Entity('publication', { schema: 'detailpublication' })
 
@@ -28,8 +29,8 @@ export class publicationEntity {
     })
     deleteAt: Date;
 
-    @OneToMany(() => detailpublicationEntity, detailpublication => detailpublication.publication)
-    detailpublication: detailpublicationEntity []; //atributo de tipo arreglo
+    @OneToMany(() => detailpublicationsEntity, detailpublication => detailpublication.publication)
+    detailpublication: detailpublicationsEntity []; //atributo de tipo arreglo
 
 
     @Column('varchar', {

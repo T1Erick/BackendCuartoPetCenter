@@ -1,5 +1,5 @@
 import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, OneToMany, ManyToOne } from "typeorm";
-import { sectionEntity } from "./section.entities";
+import { sectionEntity } from "../../section/entities/section.entities";
 
 @Entity('section', { schema: 'category' })
 
@@ -49,11 +49,6 @@ export class categoryEntity {
     descriptionAT: string;
 
 
-    @Column('varchar', {
-        name: 'images',
-        nullable: true,
-        comment: 'Imagen del producto',
-    })
-    imagesAT: string;
+   
     
 }

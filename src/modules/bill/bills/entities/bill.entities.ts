@@ -1,5 +1,6 @@
 import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, OneToMany, ManyToOne } from "typeorm";
-import { detailbillsEntity } from "./detailbills.entities";
+import { detailbillsEntity } from "../../detailbills/entities/detailbills.entities";
+import { usersEntity } from "src/modules/users/user/entities/users.entities";
 //import { ProductEntity } from "./product.model";
 
 @Entity('bill', { schema: 'detailbills' })
@@ -8,29 +9,12 @@ export class billEntity {
     @PrimaryGeneratedColumn('uuid')  //uuid es para indicar que el id es el primarykey
     id: string;
 
-    @CreateDateColumn({
-        name: 'creted_at',
-        type: 'timestamp',
-        default: () => 'CURRENT_TIMESTAMP',
-    })
-    createAt: Date;
-
-    @UpdateDateColumn({
-        name: 'update_at',
-        type: 'timestamp',
-        default: () => 'CURRENT_TIMESTAMP',
-    })
-    updateAt: Date;
-
-    @DeleteDateColumn({
-        name: 'delete_at',
-        type: 'timestamp',
-        nullable: true,
-    })
-    deleteAt: Date;
 
     @OneToMany(() => detailbillsEntity, detailbills => detailbills.bill)
     detailbills: detailbillsEntity[]; //atributo de tipo arreglo
+
+    @ManyToOne(()=> usersEntity, user => user.bills)
+    user: usersEntity;
 
     @Column('varchar', {
         name: 'date',
@@ -38,7 +22,7 @@ export class billEntity {
         comment: 'fecha de la factura',
 
     })
-    dateAT: number;
+    dateAT: Date;
 
     @Column('varchar', {
         name: 'total',

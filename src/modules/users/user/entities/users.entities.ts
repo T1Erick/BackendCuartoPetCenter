@@ -1,3 +1,4 @@
+import { billEntity } from 'src/modules/bill/bills/entities/bill.entities';
 import { detailpublicationsEntity } from 'src/modules/social-network/detailpublication/entities/detailpublication.entities';
 import {
     PrimaryGeneratedColumn,
@@ -9,6 +10,7 @@ import {
     ManyToOne,
     OneToMany,
   } from 'typeorm';
+import { rolEntity } from '../../rol/entities/rol.entities';
   
   @Entity('user', { schema: 'user_bill_detailpublication_rol' })
   export class usersEntity {
@@ -38,8 +40,8 @@ import {
   
     
     //relacion de users (1-one) a bills (muchos-many)
-    @OneToMany(() => billsEntity, (bill) => bill.user)
-    bills: billsEntity[];
+    @OneToMany(() => billEntity, (bill) => bill.user)
+    bills: billEntity[];
   
     //relacion de users (1-one) a detailbills (muchos-many)
     @OneToMany(() => detailpublicationsEntity, (detailpublication) => detailpublication.user)
