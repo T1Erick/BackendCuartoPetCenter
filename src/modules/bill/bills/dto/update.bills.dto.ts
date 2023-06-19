@@ -1,8 +1,9 @@
 import { PartialType } from "@nestjs/swagger";
-import { CreateBillDto } from "./create.bills.dto";
-import { IsDate, IsNumber, IsOptional, IsPositive, IsString } from "class-validator";
 
-export class UpdateBillsDto extends PartialType(CreateBillDto){
+import { IsDate, IsNumber, IsOptional, IsPositive, IsString } from "class-validator";
+import { billEventoDto } from "./bills.dto";
+
+export class UpdateBillsDto extends PartialType(billEventoDto){
 
 
     @IsOptional()

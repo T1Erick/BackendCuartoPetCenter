@@ -1,4 +1,31 @@
-import { Controller } from '@nestjs/common';
+import { Controller ,Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { CategoryService } from './category.service';
+
+import { categoryEventoDto } from './dto/category.dto';
+import { UpdateCategoryDto } from './dto/update.category.dto';
+
 
 @Controller('category')
-export class CategoryController {}
+export class CategoryController {
+    constructor(private readonly categoryService: CategoryService) {}
+
+    @Post()
+    async create(@Body() CreateCategoryDto:categoryEventoDto){
+        return await this.categoryService.create(CreateCategoryDto);
+    }
+
+
+    @Get()
+    async findAll(){
+        return await this.categoryService.findAll()
+    }
+    @Patch(':id')
+    async update(@Param('id') id:string,@Body() updateCategoryDto: UpdateCategoryDto){
+        return await this.categoryService.update(id, updateCategoryDto)
+    }
+
+    @Delete(':id')
+    async remove(@Param('id') id:string){
+        return await this.categoryService.remove(id);
+    }
+}
