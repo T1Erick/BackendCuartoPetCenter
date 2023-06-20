@@ -1,4 +1,4 @@
-import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, OneToMany, ManyToOne } from "typeorm";
+import { PrimaryGeneratedColumn, Entity, Column, OneToMany, } from "typeorm";
 
 import { usersEntity } from "../../user/entities/users.entity";
 
@@ -9,8 +9,8 @@ export class rolEntity {
     id: string;
 
 
-    /*@OneToMany(() => usersEntity, user=> user.rol)
-    users: usersEntity[]; //atributo de tipo arreglo*/
+    @OneToMany(() => usersEntity, user=> user.rol)
+    users: usersEntity[]; //atributo de tipo arreglo
 
 
     @Column('varchar', {

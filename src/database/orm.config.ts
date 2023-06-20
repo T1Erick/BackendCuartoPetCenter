@@ -13,6 +13,7 @@ export const dataSourceOptions: DataSourceOptions =
     migrations: ["./migrations"],
     migrationsRun: true,
     synchronize: false,
+    
 }
 
 const dataSource = new DataSource(dataSourceOptions);

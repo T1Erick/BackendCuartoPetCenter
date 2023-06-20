@@ -52,7 +52,7 @@ import { join } from 'path';
     }
     )
   ],
-  controllers: [AppController, ProductsController],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {

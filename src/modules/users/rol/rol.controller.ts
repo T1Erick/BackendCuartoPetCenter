@@ -8,8 +8,8 @@ export class RolController {
     constructor(private readonly rolService: RolService) {}
 
     @Post()
-    async create(@Body() CreateRolDto:RolEventDto){
-        return await this.rolService.create(CreateRolDto);
+    async create(@Body() createRolDto:RolEventDto){
+        return await this.rolService.create(createRolDto);
     }
 
 

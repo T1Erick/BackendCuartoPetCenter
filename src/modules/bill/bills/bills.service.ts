@@ -53,15 +53,15 @@ export class BillsService {
     }
     async remove(id:string):Promise<DeleteResult | undefined>{
         try{
-            const deletecategory: DeleteResult = await this.billEntityDto.delete(id);
-            if(deletecategory.affected ===0){
+            const deletebill: DeleteResult = await this.billEntityDto.delete(id);
+            if(deletebill.affected ===0){
                 throw new ErrorManager({
                     type:'BAD_REQUEST',
-                        message:'La categoria no se pudo eliminar',
+                        message:'La factura no se pudo eliminar',
 
                 })
             }
-            return deletecategory;
+            return deletebill;
         }catch (e){
             throw ErrorManager.createSignatureError(e.message)
         }
