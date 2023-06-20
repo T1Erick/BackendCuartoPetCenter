@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SectionModule } from './modules/store/section/section.module';
 import { CategoryModule } from './modules/store/category/category.module';
-import { ProductsController } from './modules/store/products/products.controller';
+
 
 import { ProductsModule } from './modules/store/products/products.module';
 import { BillsModule } from './modules/bill/bills/bills.module';

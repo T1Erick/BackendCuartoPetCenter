@@ -17,7 +17,7 @@ export const databaseProviders= [
                     host:"localhost",
                     port: 5432,
                     database:"Pet_Center",
-                    entities: [join(__dirname, '**', '*.entity.{ts,js}')],
+                    entities: [join(__dirname, "../**/*.entity{.ts,.js}")],
                     migrations: [__dirname + '/migrations/*.{.ts,.js}'],
                     synchronize: true,
                 }as ConnectOptions

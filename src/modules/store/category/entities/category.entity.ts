@@ -1,4 +1,4 @@
-import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, OneToMany, ManyToOne } from "typeorm";
+import { PrimaryGeneratedColumn, Entity, Column, OneToMany, ManyToOne } from "typeorm";
 import { sectionEntity } from "../../section/entities/section.entity";
 import { productsEntity } from "../../products/entities/products.entity";
 
