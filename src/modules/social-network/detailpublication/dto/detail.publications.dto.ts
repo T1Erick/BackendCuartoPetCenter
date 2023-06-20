@@ -1,7 +1,7 @@
-import { IsOptional, IsString } from "class-validator";
+import { IsNotEmpty, IsOptional, IsString } from "class-validator";
 
 export class detailpublicationEventoDto{
-    @IsOptional()
+    @IsNotEmpty()
     @IsString()
     amount: number;
 }

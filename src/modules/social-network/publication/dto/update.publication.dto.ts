@@ -6,6 +6,12 @@ export class UpdatepublicationEventoDto extends PartialType(CreatepublicationEve
     @IsOptional()
     @IsString()
     titlepublication: string;
+
+    @IsOptional()
+    @IsString()
     description: string;
+
+    @IsOptional()
+    @IsString()
     image:string;
 }

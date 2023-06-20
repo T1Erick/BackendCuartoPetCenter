@@ -11,26 +11,6 @@ export class detailbillsEntity {
     @PrimaryGeneratedColumn('uuid')  //uuid es para indicar que el id es el primarykey
     id: string;
 
-    @CreateDateColumn({
-        name: 'creted_at',
-        type: 'timestamp',
-        default: () => 'CURRENT_TIMESTAMP',
-    })
-    createAt: Date;
-
-    @UpdateDateColumn({
-        name: 'update_at',
-        type: 'timestamp',
-        default: () => 'CURRENT_TIMESTAMP',
-    })
-    updateAt: Date;
-
-    @DeleteDateColumn({
-        name: 'delete_at',
-        type: 'timestamp',
-        nullable: true,
-    })
-    deleteAt: Date;
 
     @ManyToOne(() => billEntity, bill => bill.detailbills)
     bill: billEntity; //atributo de tipo arreglo
