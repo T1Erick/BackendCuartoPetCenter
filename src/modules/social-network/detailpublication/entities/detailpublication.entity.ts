@@ -1,4 +1,4 @@
-import { usersEntity } from 'src/modules/users/user/entities/users.entities';
+import { usersEntity } from 'src/modules/users/user/entities/users.entity';
 import {
   PrimaryGeneratedColumn,
   Entity,
@@ -8,9 +8,9 @@ import {
   Column,
   ManyToOne,
 } from 'typeorm';
-import { publicationEntity } from '../../publication/entities/publication.entities';
+import { publicationEntity } from '../../publication/entities/publication.entity';
 
-@Entity('detailpublications', { schema: 'detailpublication_user_publication' })
+@Entity('detailpublications')
 export class detailpublicationsEntity {
   @PrimaryGeneratedColumn('uuid') //uuid es para indicar que el id es el primarykey
   id: string;

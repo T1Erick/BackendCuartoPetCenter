@@ -1,9 +1,9 @@
 import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, OneToMany, ManyToOne } from "typeorm";
-import { detailbillsEntity } from "../../detailbills/entities/detailbills.entities";
-import { usersEntity } from "src/modules/users/user/entities/users.entities";
+import { detailbillsEntity } from "../../detailbills/entities/detailbills.entity";
+import { usersEntity } from "src/modules/users/user/entities/users.entity";
 //import { ProductEntity } from "./product.model";
 
-@Entity('bill', { schema: 'detailbills' })
+@Entity('bill')
 
 export class billEntity {
     @PrimaryGeneratedColumn('uuid')  //uuid es para indicar que el id es el primarykey

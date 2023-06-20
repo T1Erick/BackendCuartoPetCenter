@@ -1,11 +1,11 @@
 import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, ManyToOne } from "typeorm";
 
-import { billEntity } from "../../bills/entities/bill.entities";
-import { productsEntity } from "src/modules/store/products/entities/products.entities";
+import { billEntity } from "../../bills/entities/bill.entity";
+import { productsEntity } from "src/modules/store/products/entities/products.entity";
 
 //import { ProductEntity } from "./product.model";
 
-@Entity('bill', { schema: 'detailbills' })
+@Entity('detailbill')
 
 export class detailbillsEntity {
     @PrimaryGeneratedColumn('uuid')  //uuid es para indicar que el id es el primarykey
@@ -48,11 +48,5 @@ export class detailbillsEntity {
     @ManyToOne(() => productsEntity, products => products.detailbills)
     products: productsEntity;
 
-    @Column('varchar', {
-        name: 'amount',
-        nullable: false,
-        comment: 'cantidad del detalle de la factura',
-
-    })
-    amount1AT: number;
+   
 }

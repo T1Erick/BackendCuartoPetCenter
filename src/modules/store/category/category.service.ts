@@ -1,6 +1,6 @@
 
 import { InjectRepository } from '@nestjs/typeorm';
-import { categoryEntity } from './entities/category.entities';
+import { categoryEntity } from './entities/category.entity';
 import { Injectable } from '@nestjs/common';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import { categoryEventoDto } from './dto/category.dto';

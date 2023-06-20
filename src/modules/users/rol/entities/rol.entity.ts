@@ -1,8 +1,8 @@
 import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, OneToMany, ManyToOne } from "typeorm";
 
-import { usersEntity } from "../../user/entities/users.entities";
+import { usersEntity } from "../../user/entities/users.entity";
 
-@Entity('section', { schema: 'category' })
+@Entity('rol')
 
 export class rolEntity {
     @PrimaryGeneratedColumn('uuid')  //uuid es para indicar que el id es el primarykey

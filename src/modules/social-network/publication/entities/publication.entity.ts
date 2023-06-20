@@ -1,8 +1,8 @@
 import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, OneToMany, ManyToOne } from "typeorm";
-import { detailpublicationsEntity } from "../../detailpublication/entities/detailpublication.entities";
+import { detailpublicationsEntity } from "../../detailpublication/entities/detailpublication.entity";
 
 
-@Entity('publication', { schema: 'detailpublication' })
+@Entity('publication')
 
 export class publicationEntity {
     @PrimaryGeneratedColumn('uuid')  //uuid es para indicar que el id es el primarykey

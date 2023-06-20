@@ -1,9 +1,10 @@
 import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, OneToMany, ManyToOne } from "typeorm";
-import { categoryEntity } from "../../category/entities/category.entities";
+import { sectionEntity } from "../../section/entities/section.entity";
+import { productsEntity } from "../../products/entities/products.entity";
 
-@Entity('section', { schema: 'category' })
+@Entity('category')
 
-export class sectionEntity {
+export class categoryEntity {
     @PrimaryGeneratedColumn('uuid')  //uuid es para indicar que el id es el primarykey
     id: string;
 
@@ -28,16 +29,30 @@ export class sectionEntity {
     })
     deleteAt: Date;
 
-    @OneToMany(() => categoryEntity, category => category.section)
-    category: categoryEntity []; //atributo de tipo arreglo
+    @ManyToOne(() => sectionEntity, section => section.category)
+    section: sectionEntity ; //atributo de tipo arreglo
+
+    @OneToMany(() =>productsEntity,products=> products.category)
+    products: productsEntity[];
 
 
     @Column('varchar', {
-        name: 'namesection',
+        name: 'namecategory',
         nullable: false,
-        comment: 'Nombre de la seccion',
+        comment: 'Nombre de la categoria',
 
     })
-    namesectionAT: string;
+    namecategoryAT: string;
 
+
+    @Column('varchar', {
+        name: 'description',
+        nullable: true,
+        comment: 'Descripcion de la categoria',
+    })
+    descriptionAT: string;
+
+
+   
+    
 }

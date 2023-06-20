@@ -1,5 +1,5 @@
 
-import { detailbillsEntity } from 'src/modules/bill/detailbills/entities/detailbills.entities';
+import { detailbillsEntity } from 'src/modules/bill/detailbills/entities/detailbills.entity';
 import {
   PrimaryGeneratedColumn,
   Entity,
@@ -10,9 +10,9 @@ import {
   ManyToOne,
   OneToMany,
 } from 'typeorm';
-import { categoryEntity } from '../../category/entities/category.entities';
+import { categoryEntity } from '../../category/entities/category.entity';
 
-@Entity('products', { schema: 'products_categoria_detalle_factura' })
+@Entity('products')
 export class productsEntity {
   @PrimaryGeneratedColumn('uuid') //uuid es para indicar que el id es el primarykey
   id: string;

@@ -1,5 +1,5 @@
-import { billEntity } from 'src/modules/bill/bills/entities/bill.entities';
-import { detailpublicationsEntity } from 'src/modules/social-network/detailpublication/entities/detailpublication.entities';
+import { billEntity } from 'src/modules/bill/bills/entities/bill.entity';
+import { detailpublicationsEntity } from 'src/modules/social-network/detailpublication/entities/detailpublication.entity';
 import {
     PrimaryGeneratedColumn,
     Entity,
@@ -10,9 +10,9 @@ import {
     ManyToOne,
     OneToMany,
   } from 'typeorm';
-import { rolEntity } from '../../rol/entities/rol.entities';
+import { rolEntity } from '../../rol/entities/rol.entity';
   
-  @Entity('user', { schema: 'user_bill_detailpublication_rol' })
+  @Entity('user')
   export class usersEntity {
     @PrimaryGeneratedColumn('uuid') //uuid es para indicar que el id es el primarykey
     id: string;
