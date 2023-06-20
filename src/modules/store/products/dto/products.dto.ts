@@ -1,27 +1,27 @@
-import { IsOptional, IsString, IsNumber, IsDate } from "class-validator";
+import {  IsString, IsNumber, IsDate, IsNotEmpty } from "class-validator";
 
 export class productEventoDto {
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
   titulo: string;
 
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
   descripcion: string;
 
-  @IsOptional()
+  @IsNotEmpty()
   @IsNumber()
   precio: number;
 
-  @IsOptional()
+  @IsNotEmpty()
   @IsString()
   foto: string;
 
-  @IsOptional()
+  @IsNotEmpty()
   @IsDate()
   fechaVencimiento: Date;
 
-  @IsOptional()
+  @IsNotEmpty()
   @IsNumber()
   amount: number;
 }

@@ -1,7 +1,7 @@
-import { IsOptional, IsDate } from "class-validator";
+import {  IsDate, IsNotEmpty } from "class-validator";
 
 export class detailpublicationEventoDto {
-  @IsOptional()
+  @IsNotEmpty()
   @IsDate()
-  fechaPublicacion: Date;
+  fecha_publicacion: Date;
 }

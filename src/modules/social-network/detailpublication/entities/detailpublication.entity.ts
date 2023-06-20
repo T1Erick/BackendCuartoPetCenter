@@ -27,6 +27,6 @@ export class detailpublicationsEntity {
     nullable: false,
     comment: 'fecha de publicación',
   })
-  fechaPublicacion: Date;
+  fecha_publicacion: Date;
   
 }

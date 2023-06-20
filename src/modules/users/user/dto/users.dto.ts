@@ -21,7 +21,5 @@ export class userEventoDto {
   @IsString()
   password: string;
 
-  @IsNotEmpty()
-  @IsString()
-  amount: number;
+  
 }

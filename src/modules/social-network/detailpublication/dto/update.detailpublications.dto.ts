@@ -6,5 +6,5 @@ import { CreateDetailpublicationEventoDto } from "./create.detailpublications.dt
 export class UpdateDetailpublicationEventoDto extends PartialType(CreateDetailpublicationEventoDto){
     @IsOptional()
     @IsString()
-    amount: number;
+    fecha_publicacion: Date;
 }

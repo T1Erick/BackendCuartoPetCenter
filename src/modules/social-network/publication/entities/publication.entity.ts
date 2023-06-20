@@ -19,20 +19,20 @@ export class publicationEntity {
         comment: 'Titulo de la publicacion',
 
     })
-    titleAT: string;
+    title: string;
 
     @Column('varchar', {
         name: 'description',
         nullable: true,
         comment: 'Descripcion de la publicacion',
     })
-    descriptionAT: string;
+    description: string;
 
     @Column('varchar', {
         name: 'images',
         nullable: true,
         comment: 'Imagen de la publicacion',
     })
-    imagesAT: string;
+    images: string;
     
 }
