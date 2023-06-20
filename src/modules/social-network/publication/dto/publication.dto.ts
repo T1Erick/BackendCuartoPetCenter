@@ -1,9 +1,15 @@
-import { IsOptional, IsString } from "class-validator";
+import { IsNotEmpty, IsString } from "class-validator";
 
 export class publicationEventoDto{
-    @IsOptional()
+    @IsNotEmpty()
     @IsString()
     titlepublication: string;
+
+    @IsNotEmpty()
+    @IsString()
     description: string;
+
+    @IsNotEmpty()
+    @IsString()
     image:string;
 }

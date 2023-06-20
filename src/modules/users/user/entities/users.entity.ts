@@ -3,9 +3,6 @@ import { detailpublicationsEntity } from 'src/modules/social-network/detailpubli
 import {
     PrimaryGeneratedColumn,
     Entity,
-    CreateDateColumn,
-    UpdateDateColumn,
-    DeleteDateColumn,
     Column,
     ManyToOne,
     OneToMany,
@@ -16,28 +13,6 @@ import { rolEntity } from '../../rol/entities/rol.entity';
   export class usersEntity {
     @PrimaryGeneratedColumn('uuid') //uuid es para indicar que el id es el primarykey
     id: string;
-  
-    @CreateDateColumn({
-      name: 'created_at',
-      type: 'timestamp',
-      default: () => 'CURRENT_TIMESTAMP',
-    })
-    createdAt: Date;
-  
-    @UpdateDateColumn({
-      name: 'updated_at',
-      type: 'timestamp',
-      default: () => 'CURRENT_TIMESTAMP',
-    })
-    updatedAt: Date;
-  
-    @DeleteDateColumn({
-      name: 'deleted_at',
-      type: 'timestamp',
-      nullable: true,
-    })
-    deletedAt: Date;
-  
     
     //relacion de users (1-one) a bills (muchos-many)
     @OneToMany(() => billEntity, (bill) => bill.user)

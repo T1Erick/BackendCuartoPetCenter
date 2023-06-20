@@ -1,7 +1,7 @@
-import { IsOptional, IsString } from "class-validator";
+import { IsOptional, IsDate } from "class-validator";
 
-export class detailpublicationEventoDto{
-    @IsOptional()
-    @IsString()
-    amount: number;
+export class detailpublicationEventoDto {
+  @IsOptional()
+  @IsDate()
+  fechaPublicacion: Date;
 }
