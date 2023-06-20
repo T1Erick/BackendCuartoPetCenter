@@ -9,7 +9,7 @@ import {
   } from 'typeorm';
 import { rolEntity } from '../../rol/entities/rol.entity';
   
-  @Entity('user')
+  @Entity('users')
   export class usersEntity {
     @PrimaryGeneratedColumn('uuid') //uuid es para indicar que el id es el primarykey
     id: string;
