@@ -14,8 +14,12 @@ import { publicationEntity } from '../../publication/entities/publication.entity
 export class detailpublicationsEntity {
   @PrimaryGeneratedColumn('uuid') //uuid es para indicar que el id es el primarykey
   id: string;
+<<<<<<< HEAD
 
 
+=======
+  
+>>>>>>> 28d448ac4f8ab2eba98b7d8794036c5b705c2579
   //relacion de detail_publications (muchos-many) a users (1-one)
   @ManyToOne(() => usersEntity, (user) => user.detailpublications)
   user: usersEntity;
