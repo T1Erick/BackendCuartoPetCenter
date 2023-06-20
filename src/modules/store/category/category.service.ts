@@ -16,6 +16,7 @@ export class CategoryService {
 
     async create(createcategoryeventDto: categoryEventoDto):Promise<categoryEntity>{
         try {
+            console.log(createcategoryeventDto)
             const categorycreate: categoryEntity = await this.categoryEntityDto.save(createcategoryeventDto);
             return categorycreate;}catch(e){
                 throw new Error(e)

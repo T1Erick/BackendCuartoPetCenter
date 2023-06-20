@@ -16,7 +16,9 @@ export class RolService {
     async create(createroleventDto: RolEventDto):Promise<rolEntity>{
         try {
             const rolcreate: rolEntity = await this.rolEntityDto.save(createroleventDto);
-            return rolcreate;}catch(e){
+            return rolcreate;
+        }
+            catch(e){
                 throw new Error(e)
             }
     }

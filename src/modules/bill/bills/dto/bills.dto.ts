@@ -4,15 +4,15 @@ export class billEventoDto{
 
     @IsNotEmpty()
     @IsDate()
-    dateAT: Date;
+    date: Date;
 
     @IsNotEmpty()
     @IsNumber()
     @IsPositive()
-    totalAT: number;
+    total: number;
 
 
     @IsNotEmpty()
     @IsString()
-    waytopayAT: string;
+    waytopay: string;
 }

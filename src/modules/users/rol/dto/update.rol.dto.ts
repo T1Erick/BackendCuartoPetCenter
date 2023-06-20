@@ -7,5 +7,5 @@ export class UpdateRolDto extends PartialType(RolEventDto){
 
     @IsOptional()
     @IsString()
-    nameRolAT: string;
+    namerol: string;
 }

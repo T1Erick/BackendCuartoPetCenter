@@ -22,7 +22,7 @@ export class billEntity {
         comment: 'fecha de la factura',
 
     })
-    dateAT: Date;
+    date: Date;
 
     @Column('varchar', {
         name: 'total',
@@ -30,7 +30,7 @@ export class billEntity {
         comment: 'valor total de la factura',
 
     })
-    totalAT: number;
+    total: number;
 
     @Column('varchar', {
         name: 'waytopay',
@@ -38,5 +38,5 @@ export class billEntity {
         comment: 'forma de pago de la factura',
 
     })
-    waytopayAT: string;
+    waytopay: string;
 }

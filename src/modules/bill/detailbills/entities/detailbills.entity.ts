@@ -41,7 +41,7 @@ export class detailbillsEntity {
         comment: 'cantidad del detalle de la factura',
 
     })
-    amountAT: number;
+    amount: number;
 
 
     //relacon de  detallefactura a productos

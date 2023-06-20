@@ -42,7 +42,7 @@ export class categoryEntity {
         comment: 'Nombre de la categoria',
 
     })
-    namecategoryAT: string;
+    namecategory: string;
 
 
     @Column('varchar', {
@@ -50,7 +50,7 @@ export class categoryEntity {
         nullable: true,
         comment: 'Descripcion de la categoria',
     })
-    descriptionAT: string;
+    description: string;
 
 
    

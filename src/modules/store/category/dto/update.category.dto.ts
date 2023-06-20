@@ -6,11 +6,11 @@ export class UpdateCategoryDto extends PartialType(categoryEventoDto){
 
     @IsOptional()
     @IsString()
-    namecategoryAT:string;
+    namecategory:string;
 
     @IsOptional()
     @IsString()
-    descriptionAT:string
+    description:string
 
 
 

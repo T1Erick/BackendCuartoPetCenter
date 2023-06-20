@@ -48,8 +48,8 @@ import { rolEntity } from '../../rol/entities/rol.entity';
     detailpublications: detailpublicationsEntity[];
   
     //relacion de users (muchos-many) a rol (1-one)
-    @ManyToOne(() => rolEntity, (rol) => rol.users)
-    rol: rolEntity;
+    /*@ManyToOne(() => rolEntity, (rol) => rol.users)
+    rol: rolEntity;*/
   
     //Columnas users
     @Column({
