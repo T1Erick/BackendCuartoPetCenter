@@ -3,9 +3,6 @@ import { detailpublicationsEntity } from 'src/modules/social-network/detailpubli
 import {
     PrimaryGeneratedColumn,
     Entity,
-    CreateDateColumn,
-    UpdateDateColumn,
-    DeleteDateColumn,
     Column,
     ManyToOne,
     OneToMany,
@@ -16,11 +13,6 @@ import { rolEntity } from '../../rol/entities/rol.entity';
   export class usersEntity {
     @PrimaryGeneratedColumn('uuid') //uuid es para indicar que el id es el primarykey
     id: string;
-<<<<<<< HEAD
-  
-  
-=======
->>>>>>> 28d448ac4f8ab2eba98b7d8794036c5b705c2579
     
     //relacion de users (1-one) a bills (muchos-many)
     @OneToMany(() => billEntity, (bill) => bill.user)

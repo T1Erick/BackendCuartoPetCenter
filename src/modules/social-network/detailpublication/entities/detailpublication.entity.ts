@@ -2,9 +2,6 @@ import { usersEntity } from 'src/modules/users/user/entities/users.entity';
 import {
   PrimaryGeneratedColumn,
   Entity,
-  CreateDateColumn,
-  UpdateDateColumn,
-  DeleteDateColumn,
   Column,
   ManyToOne,
 } from 'typeorm';

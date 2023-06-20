@@ -3,9 +3,6 @@ import { detailbillsEntity } from 'src/modules/bill/detailbills/entities/detailb
 import {
   PrimaryGeneratedColumn,
   Entity,
-  CreateDateColumn,
-  UpdateDateColumn,
-  DeleteDateColumn,
   Column,
   ManyToOne,
   OneToMany,
