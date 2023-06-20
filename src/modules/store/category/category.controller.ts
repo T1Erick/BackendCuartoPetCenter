@@ -19,6 +19,10 @@ export class CategoryController {
     async findAll(){
         return await this.categoryService.findAll()
     }
+    @Get(':id')
+    async findOne(@Param('id') id:string){
+        return await this.categoryService.findOne(id)
+    }
     @Patch(':id')
     async update(@Param('id') id:string,@Body() updateCategoryDto: UpdateCategoryDto){
         return await this.categoryService.update(id, updateCategoryDto)

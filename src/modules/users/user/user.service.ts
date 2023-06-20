@@ -40,6 +40,15 @@ export class UserService {
         }
     }
 
+    async findOne(id:string): Promise<usersEntity>{
+        try{
+            return await this.usersEntityDto.createQueryBuilder('users').where({id}).getOne();
+        }
+        catch(e){
+            throw new Error(e)
+        }
+    }
+
     async update(id:string, updateusersdto: UpdateUserEventoDto):Promise<UpdateResult| undefined>{
         try{
             const updateusers: UpdateResult= await this.usersEntityDto.update(id,updateusersdto);

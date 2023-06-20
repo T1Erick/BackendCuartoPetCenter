@@ -17,6 +17,11 @@ export class PublicationController {
     async findAll(){
         return await this.publicationService.findAll()
     }
+    @Get(':id')
+    async findOne(@Param('id') id:string){
+        return await this.publicationService.findOne(id)
+    }
+
     @Patch(':id')
     async update(@Param('id') id:string,@Body() updatepublicationDto: UpdatepublicationEventoDto){
         return await this.publicationService.update(id, updatepublicationDto)

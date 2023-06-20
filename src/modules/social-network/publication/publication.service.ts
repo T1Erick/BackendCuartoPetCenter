@@ -38,6 +38,14 @@ export class PublicationService {
             throw ErrorManager.createSignatureError(e.message)
         }
     }
+    async findOne(id:string): Promise<publicationEntity>{
+        try{
+            return await this.publicationEntityDto.createQueryBuilder('publication').where({id}).getOne();
+        }
+        catch(e){
+            throw new Error(e)
+        }
+    }
 
     async update(id:string, updatepublicationdto: UpdatepublicationEventoDto):Promise<UpdateResult| undefined>{
         try{

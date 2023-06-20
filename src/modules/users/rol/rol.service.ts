@@ -39,6 +39,14 @@ export class RolService {
             throw ErrorManager.createSignatureError(e.message)
         }
     }
+    async findOne(id:string): Promise<rolEntity>{
+        try{
+            return await this.rolEntityDto.createQueryBuilder('rol').where({id}).getOne();
+        }
+        catch(e){
+            throw new Error(e)
+        }
+    }
 
     async update(id:string, updateroldto: UpdateRolDto):Promise<UpdateResult| undefined>{
         try{

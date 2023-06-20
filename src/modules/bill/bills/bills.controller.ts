@@ -18,6 +18,12 @@ export class BillsController {
     async findAll(){
         return await this.billService.findAll()
     }
+
+    @Get(':id')
+    async findOne(@Param('id') id:string){
+        return await this.billService.findOne(id)
+    }
+
     @Patch(':id')
     async update(@Param('id') id:string,@Body() updatebillDto: UpdateBillsDto){
         return await this.billService.update(id, updatebillDto)

@@ -37,6 +37,15 @@ export class BillsService {
         }
     }
 
+    async findOne(id:string): Promise<billEntity>{
+        try{
+            return await this.billEntityDto.createQueryBuilder('bill').where({id}).getOne();
+        }
+        catch(e){
+            throw new Error(e)
+        }
+    }
+
     async update(id:string, updatebilldto: UpdateBillsDto):Promise<UpdateResult| undefined>{
         try{
             const updatebill: UpdateResult= await this.billEntityDto.update(id,updatebilldto);

@@ -38,6 +38,14 @@ export class ProductsService {
             throw ErrorManager.createSignatureError(e.message)
         }
     }
+    async findOne(id:string): Promise<productsEntity>{
+        try{
+            return await this.productsEntityDto.createQueryBuilder('product').where({id}).getOne();
+        }
+        catch(e){
+            throw new Error(e)
+        }
+    }
 
     async update(id:string, updateproductsdto: UpdateProductEventoDto):Promise<UpdateResult| undefined>{
         try{

@@ -18,6 +18,11 @@ export class SectionController {
     async findAll(){
         return await this.sectionService.findAll()
     }
+    @Get(':id')
+    async findOne(@Param('id') id:string){
+        return await this.sectionService.findOne(id)
+    }
+
     @Patch(':id')
     async update(@Param('id') id:string,@Body() updatesectionDto: UpdatesectionEventoDto){
         return await this.sectionService.update(id, updatesectionDto)

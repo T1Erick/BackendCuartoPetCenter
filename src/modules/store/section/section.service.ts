@@ -38,6 +38,14 @@ export class SectionService {
             throw ErrorManager.createSignatureError(e.message)
         }
     }
+    async findOne(id:string): Promise<sectionEntity>{
+        try{
+            return await this.sectionEntityDto.createQueryBuilder('section').where({id}).getOne();
+        }
+        catch(e){
+            throw new Error(e)
+        }
+    }
 
     async update(id:string, updatesectiondto: UpdatesectionEventoDto):Promise<UpdateResult| undefined>{
         try{

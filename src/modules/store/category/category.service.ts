@@ -39,6 +39,14 @@ export class CategoryService {
             throw ErrorManager.createSignatureError(e.message)
         }
     }
+    async findOne(id:string): Promise<categoryEntity>{
+        try{
+            return await this.categoryEntityDto.createQueryBuilder('category').where({id}).getOne();
+        }
+        catch(e){
+            throw new Error(e)
+        }
+    }
 
     async update(id:string, updatecategorydto: UpdateCategoryDto):Promise<UpdateResult| undefined>{
         try{

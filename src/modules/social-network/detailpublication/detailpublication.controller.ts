@@ -17,6 +17,11 @@ export class DetailpublicationController {
     async findAll(){
         return await this.detailpublicationsService.findAll()
     }
+
+    @Get(':id')
+    async findOne(@Param('id') id:string){
+        return await this.detailpublicationsService.findOne(id)
+    }
     @Patch(':id')
     async update(@Param('id') id:string,@Body() updatedetailpublicationsDto: UpdateDetailpublicationEventoDto){
         return await this.detailpublicationsService.update(id, updatedetailpublicationsDto)

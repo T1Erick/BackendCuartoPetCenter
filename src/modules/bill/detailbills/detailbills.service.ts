@@ -36,6 +36,14 @@ export class DetailbillsService {
             throw ErrorManager.createSignatureError(e.message)
         }
     }
+    async findOne(id:string): Promise<detailbillsEntity>{
+        try{
+            return await this.detailbillsEntityDto.createQueryBuilder('detailbill').where({id}).getOne();
+        }
+        catch(e){
+            throw new Error(e)
+        }
+    }
 
     async update(id:string, updatedetailbillsdto: UpdatedetailbillsEventoDto):Promise<UpdateResult| undefined>{
         try{

@@ -17,6 +17,12 @@ export class RolController {
     async findAll(){
         return await this.rolService.findAll()
     }
+
+    @Get(':id')
+    async findOne(@Param('id') id:string){
+        return await this.rolService.findOne(id)
+    }
+
     @Patch(':id')
     async update(@Param('id') id:string,@Body() updateRolDto: UpdateRolDto){
         return await this.rolService.update(id, updateRolDto)
