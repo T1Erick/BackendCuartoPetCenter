@@ -4,7 +4,7 @@ export class billEventoDto{
 
     @IsNotEmpty()
     @IsDate()
-    date: Date;
+    date: string;
 
     @IsNotEmpty()
     @IsNumber()

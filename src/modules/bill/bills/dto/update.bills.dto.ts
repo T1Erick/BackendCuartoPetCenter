@@ -8,7 +8,7 @@ export class UpdateBillsDto extends PartialType(billEventoDto){
 
     @IsOptional()
     @IsDate()
-    date: Date;
+    date: string;
 
     @IsOptional()
     @IsNumber()

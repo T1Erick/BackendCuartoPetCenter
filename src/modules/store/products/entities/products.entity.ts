@@ -59,11 +59,11 @@ export class productsEntity {
   foto: string;
   
   @Column({
-    type: 'date',
+    type: 'varchar',
     name: 'fecha_vencimiento',
     nullable: true,
     comment: 'fecha de vencimiento del producto',
   })
-  fechaVencimiento: Date;
+  fechaVencimiento: string;
   
 }

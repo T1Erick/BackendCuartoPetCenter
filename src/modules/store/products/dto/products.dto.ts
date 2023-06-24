@@ -19,7 +19,7 @@ export class productEventoDto {
 
   @IsNotEmpty()
   @IsDate()
-  fechaVencimiento: Date;
+  fechaVencimiento: string;
 
   @IsNotEmpty()
   @IsNumber()

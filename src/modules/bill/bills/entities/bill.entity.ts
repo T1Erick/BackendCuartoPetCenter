@@ -1,4 +1,4 @@
-import { PrimaryGeneratedColumn, Entity, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, Column, OneToMany, ManyToOne } from "typeorm";
+import { PrimaryGeneratedColumn, Entity, Column, OneToMany, ManyToOne } from "typeorm";
 import { detailbillsEntity } from "../../detailbills/entities/detailbills.entity";
 import { usersEntity } from "src/modules/users/user/entities/users.entity";
 //import { ProductEntity } from "./product.model";
@@ -22,7 +22,7 @@ export class billEntity {
         comment: 'fecha de la factura',
 
     })
-    date: Date;
+    date: string;
 
     @Column('varchar', {
         name: 'total',
