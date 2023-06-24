@@ -26,7 +26,7 @@ export class UserService {
 
     async findAll():Promise<usersEntity[]>{
         try{
-            const usersall: usersEntity[]= await this.usersEntityDto.find();
+            const usersall: usersEntity[]= await this.usersEntityDto.createQueryBuilder('users').leftJoinAndSelect('users.rol','rol').getMany();
             if(usersall.length ===0){
                 throw new ErrorManager({
                     type:'BAD_REQUEST',

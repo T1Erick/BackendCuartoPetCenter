@@ -30,7 +30,7 @@ export class RolService {
             if(rolall.length ===0){
                 throw new ErrorManager({
                     type:'BAD_REQUEST',
-                    message:'No existen secciones registradas'
+                    message:'No existen roles registrados'
                 });
 
             }
@@ -54,7 +54,7 @@ export class RolService {
             if(updaterol.affected ===0){
                 throw new ErrorManager({
                     type:'BAD_REQUEST',
-                    message:'La seccion no se pudo actualizar',
+                    message:'El Rol no se pudo actualizar',
                 });
             }
             return updaterol;
@@ -68,7 +68,7 @@ export class RolService {
             if(deleterol.affected ===0){
                 throw new ErrorManager({
                     type:'BAD_REQUEST',
-                        message:'La seccion no se pudo eliminar',
+                        message:'El Rol no se pudo eliminar',
 
                 })
             }
