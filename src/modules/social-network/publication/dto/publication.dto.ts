@@ -3,7 +3,7 @@ import { IsNotEmpty, IsString } from "class-validator";
 export class publicationEventoDto{
     @IsNotEmpty()
     @IsString()
-    titlepublication: string;
+    title: string;
 
     @IsNotEmpty()
     @IsString()
@@ -11,5 +11,5 @@ export class publicationEventoDto{
 
     @IsNotEmpty()
     @IsString()
-    image:string;
+    images:string;
 }

@@ -18,10 +18,8 @@ export class productEventoDto {
   foto: string;
 
   @IsNotEmpty()
-  @IsDate()
+  @IsString()
   fechaVencimiento: string;
 
-  @IsNotEmpty()
-  @IsNumber()
-  amount: number;
+ 
 }

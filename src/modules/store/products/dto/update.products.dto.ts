@@ -23,7 +23,5 @@ export class UpdateProductEventoDto extends PartialType(CreateProductEventoDto){
   @IsDate()
   fechaVencimiento: string;
 
-  @IsOptional()
-  @IsNumber()
-  amount: number;
+  
 }
