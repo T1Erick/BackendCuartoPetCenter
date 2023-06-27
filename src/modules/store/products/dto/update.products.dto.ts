@@ -20,7 +20,7 @@ export class UpdateProductEventoDto extends PartialType(CreateProductEventoDto){
   foto: string;
 
   @IsOptional()
-  @IsDate()
+  @IsString()
   fechaVencimiento: string;
 
   

@@ -26,7 +26,7 @@ export class CategoryService {
 
     async findAll():Promise<categoryEntity[]>{
         try{
-            const categoryall: categoryEntity[]= await this.categoryEntityDto.find();
+            const categoryall: categoryEntity[]= await this.categoryEntityDto.createQueryBuilder('category').leftJoinAndSelect('category.section','section').getMany();
             if(categoryall.length ===0){
                 throw new ErrorManager({
                     type:'BAD_REQUEST',

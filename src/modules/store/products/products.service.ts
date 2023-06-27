@@ -25,7 +25,7 @@ export class ProductsService {
 
     async findAll():Promise<productsEntity[]>{
         try{
-            const productsall: productsEntity[]= await this.productsEntityDto.find();
+            const productsall: productsEntity[]= await this.productsEntityDto.createQueryBuilder('products').leftJoinAndSelect('products.category','category').getMany();
             if(productsall.length ===0){
                 throw new ErrorManager({
                     type:'BAD_REQUEST',
