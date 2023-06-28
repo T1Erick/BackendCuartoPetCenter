@@ -3,7 +3,7 @@ import { IsDate, IsNotEmpty, IsNumber, IsPositive, IsString } from "class-valida
 export class billEventoDto{
 
     @IsNotEmpty()
-    @IsDate()
+    @IsString()
     date: string;
 
     @IsNotEmpty()
