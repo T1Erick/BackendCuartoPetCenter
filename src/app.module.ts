@@ -18,8 +18,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigService } from './config/config.service';
 import { Configuration } from './config/config.key';
 import { join } from 'path';
-import { LoginService } from './auth/login/login.service';
-import { LoginController } from './auth/login/login.controller';
 import { LoginModule } from './auth/login/login.module';
 
 @Module({
@@ -56,8 +54,8 @@ import { LoginModule } from './auth/login/login.module';
     ),
     LoginModule
   ],
-  controllers: [AppController, LoginController],
-  providers: [AppService, LoginService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {
   static port: number | string;

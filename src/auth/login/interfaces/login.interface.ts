@@ -1,5 +1,8 @@
+import { rolEntity } from "src/modules/users/rol/entities/rol.entity";
+
 export interface PayLoadToken {
     sub: string;
+    role: rolEntity;
     name: string;
 }
 

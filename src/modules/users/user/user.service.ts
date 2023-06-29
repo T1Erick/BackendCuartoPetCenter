@@ -5,6 +5,7 @@ import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import { userEventoDto } from './dto/users.dto';
 import { ErrorManager } from 'src/utils/error.manage';
 import { UpdateUserEventoDto } from './dto/update.users.dto';
+import * as bcrypt from 'bcrypt';
 
 @Injectable()
 export class UserService {
@@ -15,9 +16,9 @@ export class UserService {
 
     async create(createuserseventDto: userEventoDto):Promise<usersEntity>{
         try {
-            
-            const userscreate: usersEntity = await this.usersEntityDto.save(createuserseventDto);
-            return userscreate;
+            const salt = await bcrypt.genSalt();
+           createuserseventDto.password = await bcrypt.hash(createuserseventDto.password, salt);
+            return await this.usersEntityDto.save(createuserseventDto);      
         }
             catch(e){
                 throw new Error(e)
@@ -42,7 +43,7 @@ export class UserService {
 
     async findOne(id:string): Promise<usersEntity>{
         try{
-            return await this.usersEntityDto.createQueryBuilder('users').where({id}).getOne();
+            return await this.usersEntityDto.createQueryBuilder('users').leftJoinAndSelect('users.rol','rol').where({id}).getOne();
         }
         catch(e){
             throw new Error(e)
@@ -78,4 +79,21 @@ export class UserService {
             throw ErrorManager.createSignatureError(e.message)
         }
     }
+
+
+    public async findBy({key, value}:{
+        key : keyof  userEventoDto;
+        value : any;
+      }){
+        try {
+          const user : usersEntity = await this.usersEntityDto
+          .createQueryBuilder('user')
+          .addSelect('user.password')
+          .where({[key]: value})
+          .getOne(); 
+          return user;
+        }catch(e){
+          throw ErrorManager.createSignatureError(e.message);
+        }
+      }
 }
