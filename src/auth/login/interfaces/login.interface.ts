@@ -6,6 +6,7 @@ export interface PayLoadToken {
     name: string;
     email: string;
     secondname: string;
+    foto: string;
 }
 
 export interface AuthBody {

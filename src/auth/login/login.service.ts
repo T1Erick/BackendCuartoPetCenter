@@ -46,7 +46,8 @@ public signJWT({
           role: getUser.rol,
           name:getUser.name,
           secondname: getUser.lastname,
-          email: getUser.email
+          email: getUser.email,
+          foto:getUser.photo
         }
         return {
           accessToke: this.signJWT({
