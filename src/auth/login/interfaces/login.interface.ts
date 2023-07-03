@@ -4,6 +4,8 @@ export interface PayLoadToken {
     sub: string;
     role: rolEntity;
     name: string;
+    email: string;
+    secondname: string;
 }
 
 export interface AuthBody {

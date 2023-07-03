@@ -13,7 +13,6 @@ import { PayLoadToken } from './interfaces/login.interface';
 export class LoginService {
     constructor(@InjectRepository(usersEntity) private usersEntityDto: Repository<usersEntity>, private readonly userService: UserService ){}
 
-
     public async validateUser(email: string, password: string):Promise<usersEntity| null> {
         const userByEmail = await this.userService.findBy({
           key: 'email',
@@ -43,8 +42,11 @@ public signJWT({
         const getUser = await this.userService.findOne(user.id);
         const payload: PayLoadToken = {
           sub: getUser.id,
+
           role: getUser.rol,
-          name:getUser.name
+          name:getUser.name,
+          secondname: getUser.lastname,
+          email: getUser.email
         }
         return {
           accessToke: this.signJWT({
